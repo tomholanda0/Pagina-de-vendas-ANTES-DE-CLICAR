@@ -1658,3 +1658,13 @@ footer {
     z-index: 9999;
     pointer-events: auto;
 }
+
+.price-box-simple {
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.price-box-simple a {
+    pointer-events: auto;
+}
