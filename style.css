@@ -1651,3 +1651,10 @@ footer {
     line-height: 1.5;
     margin: 0;
 }
+
+/* FIX CLIQUE BOTÃO */
+.cta-button {
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
