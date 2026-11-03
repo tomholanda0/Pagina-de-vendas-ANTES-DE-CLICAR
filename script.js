@@ -91,7 +91,25 @@
         alvos.forEach(function (el) { obsBarra.observe(el); });
     }
 
-    // 5. Vitrine: setas no computador.
+    // 5. A caneta começa a marcar quando a mensagem aparece na tela.
+    var celular = document.querySelector('.celular');
+    if (celular) {
+        if (temObservador) {
+            var obsCelular = new IntersectionObserver(function (entradas) {
+                entradas.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        celular.classList.add('anotar');
+                        obsCelular.disconnect();
+                    }
+                });
+            }, { threshold: 0.45 });
+            obsCelular.observe(celular);
+        } else {
+            celular.classList.add('anotar');
+        }
+    }
+
+    // 6. Vitrine: setas no computador.
     var galeria = document.querySelector('.galeria');
     document.querySelectorAll('[data-galeria]').forEach(function (botao) {
         botao.addEventListener('click', function () {

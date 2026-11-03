@@ -148,6 +148,7 @@ section {
 .marca {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
     gap: 10px;
     font-family: var(--fonte-titulo);
     font-weight: 700;
@@ -252,6 +253,30 @@ section {
     width: 100%;
 }
 
+@media (max-width: 380px) {
+    .topo {
+        padding-top: 8px;
+    }
+
+    .hero {
+        padding-top: 8px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-sub {
+        font-size: 1.05em;
+        margin: 0.6em 0 1.1em;
+    }
+
+    .garantias {
+        margin-top: 14px;
+        gap: 6px;
+    }
+}
+
 @media (min-width: 560px) {
     .hero .botao {
         width: auto;
@@ -327,7 +352,7 @@ section {
 }
 
 .chat-status {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--tinta-suave);
 }
 
@@ -349,7 +374,7 @@ section {
     vector-effect: non-scaling-stroke;
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    animation: desenhar 0.7s 0.35s ease-out forwards;
+    animation: desenhar 0.7s 0.2s ease-out forwards;
 }
 
 .chat-corpo {
@@ -386,9 +411,9 @@ section {
     animation: marcar 0.45s ease-out forwards;
 }
 
-.balao:nth-of-type(2) mark { animation-delay: 1.05s; }
-.balao:nth-of-type(3) mark { animation-delay: 1.45s; }
-.balao:nth-of-type(4) mark { animation-delay: 1.85s; }
+.balao:nth-of-type(2) mark { animation-delay: 0.85s; }
+.balao:nth-of-type(3) mark { animation-delay: 1.3s; }
+.balao:nth-of-type(4) mark { animation-delay: 1.75s; }
 
 .nota {
     font-family: var(--fonte-mao);
@@ -414,10 +439,10 @@ section {
     transform: translateY(-6px);
 }
 
-.nota-1 { animation-delay: 0.75s; }
-.nota-2 { animation-delay: 1.25s; }
-.nota-3 { animation-delay: 1.65s; }
-.nota-4 { animation-delay: 2.05s; margin-bottom: 0; }
+.nota-1 { animation-delay: 0.6s; }
+.nota-2 { animation-delay: 1.1s; }
+.nota-3 { animation-delay: 1.55s; }
+.nota-4 { animation-delay: 2s; margin-bottom: 0; }
 
 .hero-celular figcaption {
     margin-top: 18px;
@@ -425,6 +450,13 @@ section {
     text-align: center;
     color: var(--tinta-suave);
     font-size: 1rem;
+}
+
+/* Com JavaScript: a caneta espera o celular aparecer na tela (no celular ele fica abaixo da dobra) */
+.js .celular:not(.anotar) .circulo path,
+.js .celular:not(.anotar) .balao mark,
+.js .celular:not(.anotar) .nota {
+    animation-play-state: paused;
 }
 
 @keyframes desenhar {
@@ -767,7 +799,7 @@ section {
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     line-height: 1;
     color: var(--tinta);
 }
@@ -964,7 +996,7 @@ section {
 }
 
 .barra-texto span {
-    font-size: 0.9rem;
+    font-size: 0.98rem;
     color: var(--tinta-suave);
 }
 
@@ -1001,7 +1033,13 @@ section {
 .rodape-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px 22px;
+    gap: 0 24px;
+}
+
+.rodape-links a,
+.rodape-contato a {
+    display: inline-block;
+    padding: 11px 0;
 }
 
 @media (min-width: 900px) {
