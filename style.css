@@ -609,6 +609,17 @@ footer {
     border-top: 1px solid #111;
 }
 
+footer a {
+    color: #8892b0;
+    text-decoration: underline;
+}
+
+.guarantee-desc a,
+.faq-item a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
 /* --- Floating Animation --- */
 @keyframes float {
     0% {
